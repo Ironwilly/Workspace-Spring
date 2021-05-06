@@ -2,39 +2,25 @@ package com.example.demo;
 
 import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
 
 import lombok.Data;
 
-@Data
-public class EnglishTranslator implements ITranslator{
-	
-	private HashMap dictionary;
-	
-	
-	
-	
-	
-	
-	
-	
+@Service
+public class EnglishTranslator implements ITranslator {
+
+	private Map<String, String> words;
+
 	public EnglishTranslator() {
-		super();
-		this.dictionary = new HashMap<String,String>();
-		
-		dictionary.put("one", "uno");
-		dictionary.put("bird", "pajaro");
-		dictionary.put("red", "rojo");
-		dictionary.put("cat", "gato");
-		dictionary.put("house", "casa");
-		dictionary.put("flower", "flor");
-		dictionary.put("rocket", "cohete");
+		// TODO Auto-generated constructor stub
+
+		words = new HashMap<>();
+		words.put("Hola", "Hello");
+
 	}
 
-	
-	
-	
-	
-	
 	@Override
 	public String translate() {
 		// TODO Auto-generated method stub
@@ -44,10 +30,7 @@ public class EnglishTranslator implements ITranslator{
 	@Override
 	public String translate(String word) {
 		// TODO Auto-generated method stub
-		return translate(word);
+		return words.get(word);
 	}
-	
-	
-	
 
 }
