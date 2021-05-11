@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.time.temporal.TemporalAdjuster"/>
     <fullyQualifiedTypeName name="java.time.temporal.TemporalAdjusters"/>
     <fullyQualifiedTypeName name="com.salesianostriana.dam.modelo.ICrudAlumno"/>
@@ -32,10 +31,7 @@
     <fullyQualifiedTypeName name="com.salesianostriana.dam.demojpa.IAlumnoRepository"/>
     <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
     <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
-    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
-    <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
-    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="com.salesianostriana.dam.model.Persona"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
@@ -45,8 +41,14 @@
     <fullyQualifiedTypeName name="com.salesianostriana.dam.serviciosBase.BaseService"/>
     <fullyQualifiedTypeName name="com.salesianostriana.dam.modelo.Alumno"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.salesianostriana.dam.servicios.AlumnoService"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="com.salesianostriana.dam.servicios.AlumnoService"/>
+    <fullyQualifiedTypeName name="com.salesianostriana.dam.model.Bicicleta"/>
 </qualifiedTypeNameHistroy>
