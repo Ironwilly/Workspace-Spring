@@ -22,7 +22,7 @@ public class BicicletaController {
 	@GetMapping("/")
 	public String index(Model model) {
 		
-		model.addAttribute("bicicletas",bicicletaService.findAll());
+		model.addAttribute("bicicleta",bicicletaService.findAll());
 		
 		return "/listBicicletas";
 		

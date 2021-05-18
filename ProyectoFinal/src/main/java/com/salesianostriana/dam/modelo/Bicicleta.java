@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -25,8 +27,9 @@ public class Bicicleta {
 	
 	//atributos
 	
-	private long id;
-	private String marcaModelo;
+	@Id
+	@GeneratedValue
+	private long id;	private String marcaModelo;
 	
 	@Lob
 	private String descripcion;
@@ -43,7 +46,9 @@ public class Bicicleta {
 
 
 	@ManyToOne
-	private String categoria;
+	private Categoria categoria;
+	
+	
 	
 	
 	
@@ -51,7 +56,7 @@ public class Bicicleta {
 	
 	
 		public Bicicleta(String marcaModelo, String descripcion, LocalDate year, boolean hombre, boolean mujer,
-				String talla, double precio, String imagen, String categoria) {
+				String talla, double precio, String imagen, Categoria categoria) {
 			super();
 			this.marcaModelo = marcaModelo;
 			this.descripcion = descripcion;
