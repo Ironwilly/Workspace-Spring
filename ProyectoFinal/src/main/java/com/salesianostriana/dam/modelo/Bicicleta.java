@@ -29,12 +29,14 @@ public class Bicicleta {
 	
 	@Id
 	@GeneratedValue
-	private long id;	private String marcaModelo;
+	private long id;	
+	
+	private String marcaModelo;
 	
 	@Lob
 	private String descripcion;
 	
-	private LocalDate year;
+	private String year;
 	private boolean hombre;
 	private boolean mujer;
 	private String talla;
@@ -55,7 +57,7 @@ public class Bicicleta {
 	//Constructor
 	
 	
-		public Bicicleta(String marcaModelo, String descripcion, LocalDate year, boolean hombre, boolean mujer,
+		public Bicicleta(String marcaModelo, String descripcion, String year, boolean hombre, boolean mujer,
 				String talla, double precio, String imagen, Categoria categoria) {
 			super();
 			this.marcaModelo = marcaModelo;

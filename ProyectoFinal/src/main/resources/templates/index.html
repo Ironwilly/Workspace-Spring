@@ -1,290 +1,571 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<html lang="es">
+
 <head>
-	  <meta charset="utf-8">
-	  
+  <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"
+  href="/css/styles.css">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script th:src="@{/javascript/indexJavascript.js}"
+  src="../static/javascript/indexJavascript.js" defer></script>
 
 
-  <script src="/javascript/indexJavascript.js"></script>
+  <title>index</title>
+
+  <style type="text/css">
+    * {
+     box-sizing: border-box;
+   }
+
+   #envoltorio {
+     width: 85%;
+     margin: 0 auto;
+     min-width: 650px;
+   }
+
+   #envoltorio header img {
+     width: 100%;
+   }
+
+   #envoltorio #contenido {
+     display: flex;
+     align-items: stretch;
+     justify-content: space-between;
+     flex-direction: row;
+   }
+
+   #envoltorio #contenido nav {
+     background-color: rgb(187, 187, 187);
+     color: rgb(0, 0, 0);
+     width: 20%;
+     
+     font-size: 25px;
+   }
+
+   #envoltorio #contenido nav li {
+     list-style: none;
+   }
+
+   #envoltorio #contenido main {
+     width: 100%;
+     padding: 20px 3%;
+   }
+
+   #envoltorio #contenido aside {
+     width: 1%;
+     background-color: rgb(255, 255, 255);
+   }
+
+   .btn-block {
+     color: rgb(255, 251, 0);
+   }
+
+   .btn-info {
+     background-color: rgb(66, 108, 255);
+   }
+
+   .derecha {
+     background-color: white;
+   }
+
+   .otroestilo {
+     font-weight: bold;
+     font-size: 16px;
+     color: red;
+   }
+
+   h5 {
+     color: red;
+   }
 
 
-	<title>index</title>
-	
-	<style type="text/css">
-		*{
-			box-sizing: border-box;
-		}
-		#envoltorio{
-			width: 85%;
-			margin: 0 auto;
-			min-width: 650px;
-		}
-		#envoltorio header img{
-			width: 100%;
-		}
-		#envoltorio #contenido{
-			display: flex;
-			align-items: stretch;
-			justify-content: space-between;
-			flex-direction: row;
+   .bg-image {
 
 
-		}
-		#envoltorio #contenido nav{
-			background-color: rgb(187,187,187);
-			color: rgb(0,0,0);
-			width: 20%;
-			padding: 20px 3%;
-      font-size: 25px;
-		}
-		#envoltorio #contenido nav li{
-			list-style: none;
-		}
-		#envoltorio #contenido main{
-			width: 100%;
-			padding: 20px 3%;
-		}
-		#envoltorio #contenido aside{
-			width: 1%;
-			background-color: rgb(255,255,255);
-		}
+    transition: transform .2s; 
 
-    .btn-block{
-      color: rgb(255,251,0);
-    }
-
-    .btn-info {
-
-      background-color: rgb(66,108,255);
-    }
-    
-	
-	.derecha{
-
-    background-color: white;
+    margin: 0 auto;
   }
-		
 
-		.otroestilo { font-weight:bold ; font-size:16px ; color:red ; }
+  .hover-zoom:hover {
+    transform: scale(1.05); 
+  }
 
-		h5{
-			color: red;
-		}
+  .text-dark:hover{
 
-		.p-4 p{
-      width: 111%;
-			height: 170px;
-            
-			overflow:hidden ;
-		}
+    background-color: rgb(255,251,0);
+    transform: skewX(25deg);
 
-		.p-4 p:hover{
-			overflow: scroll;
-		}
+  }
 
+ #contenido nav ul li {
 
+  text-align: left;
+  
+ }
 
-		
-	</style>
+</style>
 </head>
 <body>
 	<div id="envoltorio">
 		<header>
 			<img src="/img/banner.gif">
-			
+
 		</header>
 		<div id="contenido">
 			<nav>
-				<li>Lapierre</li>
-        <br>
-				<li>Kona</li>
-        <br>
-				<li>Specialized</li>
-        <br>
-				<li>Canyon</li>
-        <br>
-				<li>Cube</li>
-        <br>
-				<li>Trek</li>
-        <br>
-				<li>Scott</li>
-        <br>
-				<li>Orbea</li>
-        <br>
-        <div class="boton">
-        
-   
-    <button type="button" class="btn btn-block btn-info ">Agregar</button>
-    
+        <ul>
+				<li>Lapierre</li> <br>
+				<li>Kona</li> <br>
+				<li>Specialized</li> <br>
+				<li>Canyon</li> <br>
+				<li>Cube</li> <br>
+				<li>Trek</li> <br>
+				<li>Scott</li> <br>
+				<li>Orbea</li> <br>
+      </ul>
+				<div class="boton">
+
+
+					<button type="button" class="btn btn-block btn-info ">Agregar</button>
+          <button type="button" class="btn btn-block btn-info ">Borrar</button>
 
 
 
-  
-      </div>
+
+
+				</div>
 			</nav>
 			<main>
-				<div class="container-fluid">
-  <div class="px-lg-5">
+				
 
-    <!-- For demo purpose -->
-    <div class="row py-5">
-      <div class="col-lg-12 mx-auto">
-        <div class="text-white p-5 shadow-sm rounded banner">
-          <h1 class="display-4">Los modelos que más nos gustan.</h1>
-          
+
+
+
+        <div class="row">
+
+
+
+
+
+
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-image hover-zoom">
+              
+
+
+
+
+
+<img src="/img/Cube_reaction_pro-2021.jpg" class="w-100" data-toggle="modal" data-target="#uno" width="105%">
+
+              <div class="p-4">
+                <h5>
+                  <a href="#" class="text-dark">Cube Reaction Pro-2021</a>
+                </h5>
+                <p class="small text-muted mb-0">
+
+                  <strong>Precio:</strong><span class="otroestilo">
+                  1299,00€</span>
+                </p>
+                <div
+                class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
+<div id="uno" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/Cube_reaction_pro-2021.jpg" class="img-responsive">
+            <p>Con Reaction Pro, queríamos la combinación perfecta de función, confiabilidad y rendimiento. Así que comenzamos con los componentes SLX y XT de Shimano para la transmisión 1x12, porque ofrecen una amplia gama y una reputación incomparable de precisión. Agregamos frenos de disco hidráulicos Shimano XT para un excelente rendimiento de frenado en todo clima, ya sea que esté en las colinas o luchando en la ciudad. Y terminó con la horquilla de aire RockShox Judy Silver, que combina un fácil ajuste con una rapidez que suaviza los senderos.<br><strong>Precio:</strong><span class="otroestilo"> 1299,00€</p>
+        </div>
     </div>
-    
-
-    <div class="row">
-     
-    
-      
-     
-
-       <div class="col-xl-3 col-lg-4 col-md-6 mb-">
-        <div class="bg-white rounded shadow-sm"><img src="https://amp.autopista.es/uploads/static/autopista/upload/images/gallery/5eeb2de30de69456608f59ab/5eeb2fba0de694ee168f2957-ford-mustang-mach-1-a-caballo-entre-el-mustang-gt-y-los-shelby-anade-potencia-y-eficacia-absolutas.jpg" width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">Canyon Spectral cf-7-2021</a></h5>
-            <p class="small text-muted mb-0">La Spectral se mueve muy bien hacia arriba y hacia abajo, en los senderos más rotos y empinados o en los más rápidos y llenos de flow.Una bicicleta ágil con ruedas grandes y geometría progresiva para un máximo control a altas velocidades.<br><strong>Precio:</strong><span class="otroestilo"> 2999,00€</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-      
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm"><img src="/img/Cube_reaction_pro-2021.jpg" width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">Cube Reaction Pro-2021</a></h5>
-            <p class="small text-muted mb-0">Con Reaction Pro, queríamos la combinación perfecta de función, confiabilidad y rendimiento. Así que comenzamos con los componentes SLX y XT de Shimano para la transmisión 1x12, porque ofrecen una amplia gama y una reputación incomparable de precisión. Agregamos frenos de disco hidráulicos Shimano XT para un excelente rendimiento de frenado en todo clima, ya sea que esté en las colinas o luchando en la ciudad. Y terminó con la horquilla de aire RockShox Judy Silver, que combina un fácil ajuste con una rapidez que suaviza los senderos.<br><strong>Precio:</strong><span class="otroestilo"> 1299,00€</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-  
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm"><img src="/img/trek-procaliber-98-2021.jpg" width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">Trek Procaliber-98-2021</a></h5>
-            <p class="small text-muted mb-0">La Procaliber 9.8 es la campeona de la familia.
-            Es una rígida de cross country diseñada para los ciclistas que compiten para ganar, con un cuadro de carbono con IsoSpeed que absorbe los baches de los senderos sin sacrificar la eficiencia, una horquilla ligera FOX que rinde al máximo en los descensos técnicos y una transmisión Shimano XT suave.<br><strong>Precio:</strong><span class="otroestilo"> 3599,00€</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      
-
-      
-
-    </div>
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm"><img src="/img/lapierre-zesty-am-fit-40-2020.jpg" width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">Lapierre Zesty am fit-40-2020</a></h5>
-            <p class="small text-muted mb-0">A medio camino entre una XC bi-suspensión y una enduro, con 150 mm de recorrido en el chasis de 27.5 "y 140 mm en el chasis de 29". Mejorará las sensaciones cuesta arriba en comparación con una bicicleta de enduro pura y, sin embargo, será más estable cuesta abajo que una bicicleta XC. En resumen, una bicicleta inflexible.<br><strong>Precio:</strong><span class="otroestilo"> 2599,00€</span></p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-             
-             
-            </div>
-          </div>
-        </div>
-      </div>
-     
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm"><img src="/img/Overvolt-AM-8.6.jpg"  width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">Lapierre Overvolt AM 8.6-2021</a></h5>
-            <p class="small text-muted mb-0">Escale montañas mientras disfruta del paisaje. Disfrute de maravillosos descensos mientras se concentra únicamente en el horizonte. Eso es lo que ofrece nuestra Overvolt AM 8.6. Puede atravesar montañas y marcar nuevos límites para usted. Con una altura libre de 150 o 160 mm sobre la rueda, podrá afrontar las rutas más técnicas gracias a una BTT eléctrica desarrollada con un centro de gravedad más bajo y centralizado. El resultado es un placer inagotable, un sueño de bicicleta.<br><strong>Precio:</strong><span class="otroestilo"> 6399,00€</span></p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              
-              
-            </div>
-          </div>
-        </div>
-      </div>
-     
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm"><img src="/img/Kona_Operator_CR_sunset.jpg" width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">Kona Operator CR sunset-2021</a></h5>
-            <p class="small text-muted mb-0">La Kona Operator siempre ha sido una bicicleta downhill de primera clase. En todos los parques de bicicletas del mundo conocerás a los fieles seguidores de las Kona para downhill. Después de una fase de prueba más larga, la Operator ha sido ajustada consistentemente a ruedas de 29 pulgadas y la geometría se adaptó en consecuencia. Con una cola muy corta para una bicicleta de descenso de 29" y rodamientos extremadamente robustos, la Operator sigue siendo un cohete juguetón en el parque de bicicletas y se siente como en casa en los empinados y técnicos senderos de la región del Noroeste del Pacífico. Los protectores del cuadro integrados para amortiguar los impactos de la horquilla del doble puente, los impactos de la cadena y las piedras lanzadas contra el tubo inferior garantizan que el cuadro la Operator pueda soportar sin problemas las duras bajadas de las colinas.<br><strong>Precio:</strong><span class="otroestilo"> 6118,99€</span></p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-             
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm"><img src="/img/specialized-sworks-epic.jpg" width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">specialized-sworks-epic-2021</a></h5>
-            <p class="small text-muted mb-0">El uso del carbono FACT 12m con la nueva geometría "Modern XC Race Geometry", hacen a la S-Works Epic 2021 la más ligera en su gama superando incluso a las versiones anteriores, la horquilla RockShox SID SL Ultimate BRAIN es la perfecta supensión de las carreras XC.
-            	El nuevo cuadro de la SWorks Epic 2021 introduce un nuevo Brain que es capaz de ofrecer 100mm de recorrido efectivo, además se ha mejorado su funcionamiento para que lo haga de una manera más suave, todo ello hay que combinarlo con el nuevo diseño del basculante de la SWorks que, junto con una extensión del amortiguador en carbono, es capaz de dotar de una mayor rigidez al cuadro, además ser la Specialized Epic más ligera jamás fabricada.<br><strong>Precio:</strong><span class="otroestilo"> 11599,00€</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-     
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm"><img src="/img/specialized-demo-race.jpg" width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">Specialized Demo Race-2021</a></h5>
-            <p class="small text-muted mb-0">El cuadro de aluminio M5 Demo Race está optimizado para aprovechar los beneficios de tracción de una rueda delantera de 29 pulgadas y la mayor capacidad de maniobra de una rueda trasera de 27.5 pulgadas.
-            	El amortiguador Rockshox Super Deluxe Ultimate DH ofrece compresión externa de baja velocidad y ajuste de rebote, mientras que el montaje Trunnion ofrece una mayor durabilidad.
-            	Horquilla Boxxer Ultimate 29 , incluye el cartucho Charger 2.1, pistón neumático DebonAir y 200 mm de recorrido.<br><strong>Precio:</strong><span class="otroestilo"> 7999,00€</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-     
-      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <div class="bg-white rounded shadow-sm"><img src="/img/canyon_neuron-7-2021.png" width="110%" alt="" class="img-fluid card-img-top">
-          <div class="p-4">
-            <h5> <a href="#" class="text-dark">Canyon Neuron 7-2021</a></h5>
-            <p class="small text-muted mb-0">Una suspensión FOX sensible, cambios de gran precisión Shimano, cubiertas Schwalbe de excelente agarre y una tija telescópica fácil de usar: esta bicicleta viene equipada con todo lo que necesitas para salir a rodar por la montaña.<br><strong>Precio:</strong><span class="otroestilo"> 2399,00€</p>
-            <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-             
-            </div>
-          </div>
-        </div>
-      </div>
-    <div class="py-5 text-right"><a href="#" class="btn btn-dark px-5 py-3 text-uppercase"></a></div>
   </div>
 </div>
-			</main>
-			<aside>
-				
-			</aside>
-		</div>
-		<footer>
-			<p><a href="#">©2021 1ºDAM ---> Guillermo Ferrari</a></p>
-		</footer>
-	</div>
+
+
+
+
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+          <div class="bg-image hover-zoom">
+            
+
+
+
+
+
+
+<img src="/img/trek-procaliber-98-2021.jpg" class="w-100" data-toggle="modal" data-target="#dos" width="105%">
+            <div class="p-4">
+              <h5>
+                <a href="#" class="text-dark">Trek Procaliber-98-2021</a>
+              </h5>
+              <p class="small text-muted mb-0">
+
+                <strong>Precio:</strong><span class="otroestilo">
+                3599,00€</span>
+              </p>
+              <div
+              class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+<div id="dos" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/trek-procaliber-98-2021.jpg" class="img-responsive">
+            <p>La Procaliber 9.8 es la campeona de la familia.
+            Es una rígida de cross country diseñada para los ciclistas que compiten para ganar, con un cuadro de carbono con IsoSpeed que absorbe los baches de los senderos sin sacrificar la eficiencia, una horquilla ligera FOX que rinde al máximo en los descensos técnicos y una transmisión Shimano XT suave.<br><strong>Precio:</strong><span class="otroestilo"> 3599,00€</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <div class="bg-image hover-zoom">
+          
+
+
+
+
+
+<img src="/img/lapierre-zesty-am-fit-40-2020.jpg" class="w-100" data-toggle="modal" data-target="#tres" width="105%">
+
+          <div class="p-4">
+            <h5>
+              <a href="#" class="text-dark">Lapierre Zesty am
+              fit-40-2020</a>
+            </h5>
+            <p class="small text-muted mb-0">
+
+              <strong>Precio:</strong><span class="otroestilo">
+              2599,00€</span>
+            </p>
+            <div
+            class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+<div id="tres" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/lapierre-zesty-am-fit-40-2020.jpg" class="img-responsive">
+            <p>A medio camino entre una XC bi-suspensión y una enduro, con 150 mm de recorrido en el chasis de 27.5 "y 140 mm en el chasis de 29". Mejorará las sensaciones cuesta arriba en comparación con una bicicleta de enduro pura y, sin embargo, será más estable cuesta abajo que una bicicleta XC. En resumen, una bicicleta inflexible.<br><strong>Precio:</strong><span class="otroestilo"> 2599,00€</span></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+      <div class="bg-image hover-zoom">
+        
+
+
+
+
+
+<img src="/img/Overvolt-AM-8.6.jpg" class="w-100" data-toggle="modal" data-target="#cuatro" width="105%">
+
+        <div class="p-4">
+          <h5>
+            <a href="#" class="text-dark">Lapierre Overvolt AM
+            8.6-2021</a>
+          </h5>
+          <p class="small text-muted mb-0">
+
+            <strong>Precio:</strong><span class="otroestilo">
+            6399,00€</span>
+          </p>
+          <div
+          class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+<div id="cuatro" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/Overvolt-AM-8.6.jpg" class="img-responsive">
+            <p>Escale montañas mientras disfruta del paisaje. Disfrute de maravillosos descensos mientras se concentra únicamente en el horizonte. Eso es lo que ofrece nuestra Overvolt AM 8.6. Puede atravesar montañas y marcar nuevos límites para usted. Con una altura libre de 150 o 160 mm sobre la rueda, podrá afrontar las rutas más técnicas gracias a una BTT eléctrica desarrollada con un centro de gravedad más bajo y centralizado. El resultado es un placer inagotable, un sueño de bicicleta.<br><strong>Precio:</strong><span class="otroestilo"> 6399,00€</span></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+    <div class="bg-image hover-zoom">
+      
+
+
+
+
+
+<img src="/img/Kona_Operator_CR_sunset.jpg" class="w-100" data-toggle="modal" data-target="#cinco" width="105%">
+
+      <div class="p-4">
+        <h5>
+          <a href="#" class="text-dark">Kona Operator CR sunset-2021</a>
+        </h5>
+        <p class="small text-muted mb-0">
+
+          <strong>Precio:</strong><span class="otroestilo">
+          6118,99€</span>
+        </p>
+        <div
+        class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="cinco" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/Kona_Operator_CR_sunset.jpg" class="img-responsive">
+            <p>La Kona Operator siempre ha sido una bicicleta downhill de primera clase. En todos los parques de bicicletas del mundo conocerás a los fieles seguidores de las Kona para downhill. Después de una fase de prueba más larga, la Operator ha sido ajustada consistentemente a ruedas de 29 pulgadas y la geometría se adaptó en consecuencia. Con una cola muy corta para una bicicleta de descenso de 29" y rodamientos extremadamente robustos, la Operator sigue siendo un cohete juguetón en el parque de bicicletas y se siente como en casa en los empinados y técnicos senderos de la región del Noroeste del Pacífico. Los protectores del cuadro integrados para amortiguar los impactos de la horquilla del doble puente, los impactos de la cadena y las piedras lanzadas contra el tubo inferior garantizan que el cuadro la Operator pueda soportar sin problemas las duras bajadas de las colinas.<br><strong>Precio:</strong><span class="otroestilo"> 6118,99€</span></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+  <div class="bg-image hover-zoom">
+    
+
+
+
+
+
+
+<img src="/img/specialized-sworks-epic.jpg" class="w-100" data-toggle="modal" data-target="#seis" width="105%">
+    <div class="p-4">
+      <h5>
+        <a href="#" class="text-dark">Specialized-sworks-epic-2021</a>
+      </h5>
+      <p class="small text-muted mb-0">
+
+        <strong>Precio:</strong><span class="otroestilo">
+        11599,00€</span>
+      </p>
+      <div
+      class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+    </div>
+  </div>
+
+</div>
+</div>
+<div id="seis" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/specialized-sworks-epic.jpg" class="img-responsive">
+            <p>El uso del carbono FACT 12m con la nueva geometría "Modern XC Race Geometry", hacen a la S-Works Epic 2021 la más ligera en su gama superando incluso a las versiones anteriores, la horquilla RockShox SID SL Ultimate BRAIN es la perfecta supensión de las carreras XC.
+              El nuevo cuadro de la SWorks Epic 2021 introduce un nuevo Brain que es capaz de ofrecer 100mm de recorrido efectivo, además se ha mejorado su funcionamiento para que lo haga de una manera más suave, todo ello hay que combinarlo con el nuevo diseño del basculante de la SWorks que, junto con una extensión del amortiguador en carbono, es capaz de dotar de una mayor rigidez al cuadro, además ser la Specialized Epic más ligera jamás fabricada.<br><strong>Precio:</strong><span class="otroestilo"> 11599,00€</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+  <div class="bg-image hover-zoom">
+    
+
+
+
+
+
+
+<img src="/img/specialized-demo-race.jpg" class="w-100" data-toggle="modal" data-target="#siete" width="105%">
+    <div class="p-4">
+      <h5>
+        <a href="#" class="text-dark">Specialized Demo Race-2021</a>
+      </h5>
+      <p class="small text-muted mb-0">
+
+        <strong>Precio:</strong><span class="otroestilo">
+        11599,00€</span>
+      </p>
+      <div
+      class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+    </div>
+  </div>
+
+</div>
+</div>
+<div id="siete" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/specialized-demo-race.jpg" class="img-responsive">
+            <p>El cuadro de aluminio M5 Demo Race está optimizado para aprovechar los beneficios de tracción de una rueda delantera de 29 pulgadas y la mayor capacidad de maniobra de una rueda trasera de 27.5 pulgadas.
+              El amortiguador Rockshox Super Deluxe Ultimate DH ofrece compresión externa de baja velocidad y ajuste de rebote, mientras que el montaje Trunnion ofrece una mayor durabilidad.
+              Horquilla Boxxer Ultimate 29 , incluye el cartucho Charger 2.1, pistón neumático DebonAir y 200 mm de recorrido.<br><strong>Precio:</strong><span class="otroestilo"> 7999,00€</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+  <div class="bg-image hover-zoom">
+    
+
+
+
+
+
+
+<img src="/img/canyon_neuron-7-2021.png" class="w-100" data-toggle="modal" data-target="#ocho" width="105%">
+    <div class="p-4">
+      <h5>
+        <a href="#" class="text-dark">Canyon Neuron 7-2021</a>
+      </h5>
+      <p class="small text-muted mb-0">
+
+        <strong>Precio:</strong><span class="otroestilo">
+        2399,00€</span>
+      </p>
+      <div
+      class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<div id="ocho" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/canyon_neuron-7-2021.png" class="img-responsive">
+            <p>Una suspensión FOX sensible, cambios de gran precisión Shimano, cubiertas Schwalbe de excelente agarre y una tija telescópica fácil de usar: esta bicicleta viene equipada con todo lo que necesitas para salir a rodar por la montaña.<br><strong>Precio:</strong><span class="otroestilo"> 2399,00€</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+  <div class="bg-image hover-zoom">
+    <img src="/img/canyon_spectral-cf-7-2021.png" class="w-100" data-toggle="modal" data-target="#nueve" width="105%">
+   
+
+
+
+
+    <div class="p-4">
+      <h5>
+        <a href="#" class="text-dark">Canyon Spectral cf-7-2021</a>
+      </h5>
+      <p class="small text-muted mb-0">
+
+        <strong>Precio:</strong><span class="otroestilo">
+        2999,00€</span>
+      </p>
+      <div
+      class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div id="nueve" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <img src="/img/canyon_spectral-cf-7-2021.png" class="img-responsive">
+            <p>La Spectral se mueve muy bien hacia arriba y hacia abajo, en los senderos más rotos y empinados o en los más rápidos y llenos de flow.Una bicicleta ágil con ruedas grandes y geometría progresiva para un máximo control a altas velocidades.<strong>Precio:</strong><span class="otroestilo">
+        2999,00€</span></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+<aside></aside>
+</div>
+<footer>
+ <p>
+  <a href="#">©2021 1ºDAM ---> Guillermo Ferrari</a>
+</p>
+</footer>
+</div>
 </body>
 </html>

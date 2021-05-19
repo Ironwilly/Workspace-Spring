@@ -12,7 +12,7 @@ import com.salesianostriana.dam.servicios.BicicletaService;
 @Controller
 @RequestMapping("/bicicleta")
 public class BicicletaController {
-	
+	/*
 	@Autowired
 	private BicicletaService bicicletaService;
 	
@@ -31,6 +31,6 @@ public class BicicletaController {
 	}
 	
 	
-	
+	*/
 
 }
