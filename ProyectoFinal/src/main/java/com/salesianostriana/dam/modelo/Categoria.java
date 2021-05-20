@@ -27,7 +27,7 @@ public class Categoria {
 	private String nombre;
 	
 	
-	@OneToMany(mappedBy = "categoria",cascade=CascadeType.ALL, orphanRemoval=true, fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "categoria", fetch=FetchType.EAGER)
 	private List<Bicicleta> bicicletas;
 	
 	@ManyToOne

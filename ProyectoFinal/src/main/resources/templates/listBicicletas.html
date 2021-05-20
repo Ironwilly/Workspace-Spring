@@ -51,12 +51,12 @@
 		<div class="row">
 			<div class="col-md-offset-1 col-md-10">
 				<div class="pull-right">
-					<a href="form-bicicleta.html" 
+					<a href="formulario1.html" 
 						class="btn btn-primary">Nueva bicicleta</a>
 
 				</div>
 
-				<table class="table">
+				<table class="table" border =1>
 					<thead>
 						<tr>
 							<th>imagen</th>
@@ -73,7 +73,27 @@
 						</tr>
 					</thead>
 					<tbody>
+					
+					
+					<tr th:each="bicicleta : ${lista}">
+			<td th:text="${bicicleta.id}">1</td>
+			<td th:text="${bicicleta.marcaModelo}">marcaModelo/td>
+			<td th:text="${bicicleta.categoria}">categoria</td>
+			<td th:text="${bicicleta.precio}">precio</td>
+			<td th:text="${bicicleta.year}">year</td>
+			<td th:text="${bicicleta.hombre}">hombre</td>
+			<td th:text="${bicicleta.mujer}">mujer</td>
+			<td th:text="${bicicleta.talla}">talla</td>
+			<td th:text="${bicicleta.descripcion}">descripcion</td>
+			
 
+			<td>
+				<a href="#" th:href="@{/editar/{id}(id=${bicicleta.id})}">Editar</a> | 
+				<a href="#" th:href="@{/borrar/{id}(id=${bicicleta.id})}">Borrar</a>
+			</td>
+		</tr>
+					
+<!--  
 							<tr th:each="bicicleta : ${bicicletas}">
 							<td><img th:src="${not (#strings.isEmpty(bicicleta.imagen))} 
 								              ? ${bicicleta.imagen} : 'http://placehold.it/48x48'"
@@ -86,6 +106,8 @@
 									data-target="#delete-modal">Borrar</button>
 							</td>
 						</tr>
+						
+						  -->
 					</tbody>
 				</table>
 			</div>

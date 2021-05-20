@@ -27,7 +27,7 @@ public class MainController {
 	@Autowired
 	private BicicletaService bicicletaService;
 	
-	/*
+	
 	@GetMapping("/")
 	public String index(@RequestParam(name ="idCategoria", required = false)Long idCategoria,Model model) {
 		
@@ -47,7 +47,8 @@ public class MainController {
 		
 		return "index";
 	}
-	*/
+	
+	
 	
 
 }
