@@ -8,12 +8,15 @@ import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class Bicicleta {
 
 	// atributos
@@ -38,7 +41,21 @@ public class Bicicleta {
 	@ManyToOne
 	private Categoria categoria;
 
-	// Constructor
+	// Constructores
+	
+	public Bicicleta(String marcaModelo, String descripcion, String year, String hombre, String mujer, String talla,
+			double precio, String imagen) {
+		super();
+		this.marcaModelo = marcaModelo;
+		this.descripcion = descripcion;
+		this.year = year;
+		this.hombre = hombre;
+		this.mujer = mujer;
+		this.talla = talla;
+		this.precio = precio;
+		this.imagen = imagen;
+		
+	}
 
 	public Bicicleta(String marcaModelo, String descripcion, String year, String hombre, String mujer, String talla,
 			double precio, String imagen, Categoria categoria) {

@@ -6,33 +6,60 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public abstract class BaseService<T, ID, R extends JpaRepository<T,ID>> {
+
+import com.salesianostriana.dam.modelo.Bicicleta;
+
+public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>> implements IBaseService<T, ID> {
 	
-	@Autowired
-	protected R repo;
 	
+	protected R repositorio;
+	
+	
+	
+	public BaseService(R repo){
+		
+		this.repositorio = repo;
+	}
+	
+	@Override
 	public T save(T t) {
-		return repo.save(t);
+		return repositorio.save(t);
 	}
 	
-	public T edit(T t) {
-		return save(t);
+	
+	@Override
+	public T findById(ID id) {
+		return repositorio.findById(id).orElse(null);
 	}
 	
-	public void delete(T t) {
-		repo.delete(t);
-	}
 	
-	public void deleteById(ID id) {
-		repo.deleteById(id);
-	}
-	
+	@Override
 	public List<T> findAll() {
-		return repo.findAll();
+		return repositorio.findAll();
 	}
 	
-	public Optional<T> findById(ID id) {
-		return repo.findById(id);
+	
+	@Override
+	public T edit(T t) {
+		return repositorio.save(t);
+	}
+	
+	
+	@Override
+	public void delete(T t) {
+		repositorio.delete(t);
+	}
+	
+	
+	@Override
+	public void deleteById(ID id) {
+		repositorio.deleteById(id);
 	}
 
+	public List<Bicicleta> findByCategoriaId(Long categoriaId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 }

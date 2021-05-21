@@ -7,12 +7,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.openwebinars.proyecto.modelo.Producto;
 import com.openwebinars.proyecto.modelo.Puntuacion;
 import com.openwebinars.proyecto.repositorios.ProductoRepository;
 
 @SpringBootApplication
+@EnableJpaRepositories
 public class Application {
 
 	public static void main(String[] args) {

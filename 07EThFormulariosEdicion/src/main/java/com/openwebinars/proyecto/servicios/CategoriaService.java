@@ -2,6 +2,8 @@ package com.openwebinars.proyecto.servicios;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,7 @@ import com.openwebinars.proyecto.modelo.Categoria;
 import com.openwebinars.proyecto.repositorios.CategoriaRepository;
 
 @Service
+
 public class CategoriaService {
 	
 	@Autowired

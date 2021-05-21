@@ -42,9 +42,9 @@
 						aria-expanded="false">Opciones <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="admin/list-categoria.html"
-								th:href="@{/admin/categoria/}">Gestión de categorías</a></li>
+								th:href="@{/categoria/}">Gestión de categorías</a></li>
 							<li><a href="admin/list-producto.html"
-								th:href="@{/admin/producto/}">Gestión de productos</a></li>
+								th:href="@{/bicicleta/}">Gestión de productos</a></li>
 						</ul></li>
 				</ul>				
 			</div>
@@ -65,12 +65,12 @@
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<h1>triana.salesianos.edu Shop</h1>
 				<div class="row">
-					<div class="col-sm-3" th:each="producto : ${productos}">
-						<a href="#" th:href="@{/product/{id}(id=${producto.id})}">
+					<div class="col-sm-3" th:each="bicicleta : ${bicicletas}">
+						<a href="#" th:href="@{/{id}(id=${bicicleta.id})}">
 							<div class="col-item">
 								<div class="photo">
 									<img src="http://placehold.it/350x260"
-										th:src="${#strings.isEmpty(producto.imagen)} ? 'http://placehold.it/350x260' : ${producto.imagen}"
+										th:src="${#strings.isEmpty(bicicleta.imagen)} ? 'http://placehold.it/350x260' : ${bicicleta.imagen}"
 										class="img-responsive" alt="a" />
 								</div>
 								<div class="info">
@@ -82,14 +82,14 @@ muy largos, se acorta a 65 caracteres como máximo (solo para mostrarlo) -->
 											<div class="price-text-color">
 												<span
 													th:text="${producto.descuento == 0} 
-															? ${#numbers.formatCurrency(producto.pvp)} 
-															: ${#numbers.formatCurrency(producto.pvp * (1 - producto.descuento))}">10</span>
+															? ${#numbers.formatCurrency(bicicleta.precio)} 
+															: ${#numbers.formatCurrency(bicicleta.precio * (1 - bicicleta.descuento))}">10</span>
 
-												<th:block th:if="${producto.descuento > 0}">
+												<th:block th:if="${bicicleta.descuento > 0}">
 													<span class="price-original"
-														th:text="${#numbers.formatCurrency(producto.pvp)}"></span>
+														th:text="${#numbers.formatCurrency(bicicleta.precio)}"></span>
 													<span class="label label-danger"
-														th:text=${#numbers.formatPercent(producto.descuento,1,0)}></span>
+														th:text=${#numbers.formatPercent(bicicleta.descuento,1,0)}></span>
 												</th:block>
 											</div>
 										</div>
@@ -97,14 +97,14 @@ muy largos, se acorta a 65 caracteres como máximo (solo para mostrarlo) -->
 											<div class="rating col-md-4">
 												<p>
 													<span
-														th:text="${#numbers.formatDecimal(producto.getPuntuacionMedia(),1,1)}">4</span>/5
+														th:text="${#numbers.formatDecimal(bicicleta.getPuntuacionMedia(),1,1)}">4</span>/5
 												</p>
 											</div>
 <!-- Se explica en detai.html -->
 											<div class="rating col-md-8">
 												<span th:each="i:${#numbers.sequence(1,5)}"
 													class="glyphicon"
-													th:classappend="${i <= producto.getPuntuacionMedia()} ? 'glyphicon-star': 'glyphicon-star-empty'"></span>
+													th:classappend="${i <= bicicleta.getPuntuacionMedia()} ? 'glyphicon-star': 'glyphicon-star-empty'"></span>
 											</div>
 										</div>
 									</div>
