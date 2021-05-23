@@ -2,12 +2,9 @@
 
 
 
-
-
 (function ($) {
     'use strict';
-    /*==================================================================
-        [ Daterangepicker ]*/
+   
     try {
         $('.js-datepicker').daterangepicker({
             "singleDatePicker": true,
@@ -53,8 +50,7 @@
     
     
     } catch(er) {console.log(er);}
-    /*[ Select 2 Config ]
-        ===========================================================*/
+    
     
     try {
         var selectSimple = $('.js-select-simple');
@@ -84,3 +80,8 @@
        
        
        
+
+<img onclick="javascript:this.width=450;this.height=338" 
+ondblclick="javascript:this.width=100;this.height=80" src="URL de la imagen" width="100"/>
+
+

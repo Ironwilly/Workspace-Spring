@@ -21,21 +21,38 @@ import com.salesianostriana.dam.servicios.CategoriaService;
 
 import lombok.RequiredArgsConstructor;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BicicletaController.
+ */
 @Controller
 
+/**
+ * Instantiates a new bicicleta controller.
+ *
+ * @param bicicletaService the bicicleta service
+ */
 @RequiredArgsConstructor
 public class BicicletaController {
 	
 	
+	/** The bicicleta service. */
 	@Autowired
 	private final BicicletaService bicicletaService;
 	
+	/** The categoria service. */
 	@Autowired
 	private CategoriaService categoriaService;
 	
 	
 	
 	
+	/**
+	 * Nueva bicicleta.
+	 *
+	 * @param model the model
+	 * @return the string
+	 */
 	@GetMapping("/nueva")
 	public String nuevaBicicleta(Model model) {
 		model.addAttribute("bicicleta", new Bicicleta());
@@ -45,6 +62,13 @@ public class BicicletaController {
 		return "agregarBici";
 	}
 	
+	/**
+	 * Refresh nueva bici.
+	 *
+	 * @param bicicleta the bicicleta
+	 * @param model the model
+	 * @return the string
+	 */
 	@PostMapping("/nueva/refresh")
 	public String refreshNuevaBici(@ModelAttribute("bicicleta")Bicicleta bicicleta, Model model) {
 		
@@ -54,6 +78,13 @@ public class BicicletaController {
 	}
 	
 	
+	/**
+	 * Editar bici.
+	 *
+	 * @param id the id
+	 * @param model the model
+	 * @return the string
+	 */
 	@GetMapping("/editarBici/{id}")
 	public String editarBici(@PathVariable("id")Long id,Model model) {
 		
@@ -71,6 +102,13 @@ public class BicicletaController {
 	
 	
 	
+	/**
+	 * Borrar bici.
+	 *
+	 * @param id the id
+	 * @param model the model
+	 * @return the string
+	 */
 	@GetMapping("/borrar/{id}")
 	public String borrarBici(@PathVariable("id") Long id,Model model) {
 		

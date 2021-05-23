@@ -19,14 +19,35 @@ import com.salesianostriana.dam.servicios.CategoriaService;
 import lombok.RequiredArgsConstructor;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MainController.
+ */
 @Controller
+
+/**
+ * Instantiates a new main controller.
+ *
+ * @param bici the bici
+ * @param servi the servi
+ */
 @RequiredArgsConstructor
 public class MainController {
 	
+	/** The bici. */
 	private final BicicletaService bici;
+	
+	/** The servi. */
 	private final CategoriaService servi;
 	
 	
+	/**
+	 * Todas las bicis.
+	 *
+	 * @param idCategoria the id categoria
+	 * @param model the model
+	 * @return the string
+	 */
 	@GetMapping("/")
 	public String todasLasBicis(@RequestParam(name="idCategoria", required = false)Long idCategoria, Model model) {
 		
@@ -38,7 +59,7 @@ public class MainController {
 			
 			bicicletas = bici.findAll();
 		}else {
-			bicicletas = (List<Bicicleta>) bici.findById(idCategoria);
+			bicicletas =  bici.findByCategoriaId(idCategoria);
 			
 		}
 		model.addAttribute("bicicletas", bicicletas);

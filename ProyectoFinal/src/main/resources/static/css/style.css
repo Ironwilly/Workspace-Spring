@@ -33,13 +33,24 @@
 
    #envoltorio #contenido main {
      width: 100%;
-     padding: 20px 3%;
+     height: auto;
+     
    }
+  #envoltorio #contenido main .row{
+
+    margin-left: 30px;
+   width: 70%;
+
+  }
 
    #envoltorio #contenido aside {
-     width: 1%;
-     background-color: rgb(255, 255, 255);
+     width: 150px;
+     height: auto;
+     background-color: rgb(175,175,175);
+     margin: 0px;
    }
+
+  
 
    .btn-block {
      color: rgb(255, 251, 0);
@@ -49,9 +60,8 @@
      background-color: rgb(66, 108, 255);
    }
 
-   .derecha {
-     background-color: white;
-   }
+
+  
 
    .otroestilo {
      font-weight: bold;
@@ -89,17 +99,35 @@
   
  }
 
- footer{
+ #myNavbar {
 
-  margin-left: 95px;
-  margin-right: 95px;
+  background-image: url(../img/fondopared.jpg);
+  width: 100%;
+ }
+
+ .footer{
+
+  
+  background: #152F4F;
+  color:white;
+  height: 70%;
+  
 
  }
+
+ .jumbotron{
+  margin-bottom: 0px;
+  padding: 0px;
+ }
  
+
  
-.footer2{
-	margin: 0px;
-}
+
+
+
+
+
+
  
  
  .plantilla{
@@ -146,11 +174,7 @@
   width: calc((100% - 60px) / 2);
 }
 
-@media (max-width: 767px) {
-  .col-2 {
-    width: 100%;
-  }
-}
+
 
 
 html {
@@ -171,16 +195,7 @@ html {
 }
 
 
-body,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, dd, ol, ul,
-figure,
-hr,
-fieldset, legend {
-  margin: 0;
-  padding: 0;
-}
+
 
 li > ol,
 li > ul {
@@ -209,6 +224,7 @@ button {
 
 .page-wrapper {
   min-height: 100vh;
+
 }
 
 body {
@@ -217,33 +233,9 @@ body {
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-}
 
-h1 {
-  font-size: 36px;
-}
 
-h2 {
-  font-size: 30px;
-}
 
-h3 {
-  font-size: 24px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-h5 {
-  font-size: 15px;
-}
-
-h6 {
-  font-size: 13px;
-}
 
 
 .bg-blue {
@@ -255,36 +247,60 @@ h6 {
 }
 
 .bg-gra-01 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
-  background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-  background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
+  
+
+
+
+background-image: url(../img/fondo1.gif);
+background-repeat: no-repeat;
+background-size: cover;
+
+
+
+
+
+
 }
 
-.p-t-100 {
-  padding-top: 100px;
+.agregarbici{
+
+  max-height: 1900px;
 }
 
-.p-t-180 {
-  padding-top: 180px;
+.tarjetatam .card .credit-card-div{
+
+  max-height: 1700px;
 }
 
-.p-t-20 {
-  padding-top: 20px;
+.tarjetatam .card .credit-card-div .card-body p{
+
+  font-size: 30pt;
+  color: cyan;
 }
 
-.p-t-10 {
-  padding-top: 10px;
+.tarjetatam .card .credit-card-div .card-body .input-group1 h2{
+
+  font-size: 14pt;
+  
+
 }
 
-.p-t-30 {
-  padding-top: 30px;
+.tarjetatam .card .credit-card-div .card-body .input-group1 {
+
+  
+
+
+ 
 }
 
-.p-b-100 {
-  padding-bottom: 100px;
+.tarjetatam .card .credit-card-div .card-body .input-group1 .card-3{
+  background-color: rgb(255,255,255);
+  font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
+  font-size: 11pt;
+  color: rgb(0,0,0);
 }
+
+
 
 
 .wrapper {
@@ -297,6 +313,7 @@ h6 {
 
 .wrapper--w780 {
   max-width: 780px;
+
 }
 
 .wrapper--w680 {
@@ -367,7 +384,7 @@ input[type="date" i] {
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   display: none;
   border: 1px solid #e0e0e0;
-  margin-top: 5px;
+  
 }
 
 .daterangepicker::after, .daterangepicker::before {
@@ -419,7 +436,7 @@ input {
 
 .input-group {
   position: relative;
-  margin-bottom: 33px;
+  
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -455,6 +472,9 @@ input {
 .input--style-3:-ms-input-placeholder {
   /* Microsoft Edge */
   color: #ccc;
+}
+.container-fluid{
+  padding: 0px;
 }
 
 /* ==========================================================================
@@ -547,7 +567,7 @@ input {
   font-size: 24px;
   color: #fff;
   font-weight: 400;
-  margin-bottom: 36px;
+  margin-bottom: 10px;
 }
 
 /* ==========================================================================
@@ -559,12 +579,12 @@ input {
   -moz-border-radius: 3px;
   border-radius: 3px;
   background: #fff;
-  font-size: 18pt;
-  color: yellow;
+  font-size: 15pt;
+  
 }
 
 .card-3 {
-  background: #000;
+  background: rgb(0,0,0);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -573,46 +593,62 @@ input {
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   width: 100%;
   display: table;
+
 }
 
-.card-3 .card-heading {
-  background: url("../img/bicisilueta.png") top left/cover no-repeat;
-  display: table-cell;
-  width: 60%;
-}
+
 
 .card-3 .card-body {
   padding: 57px 65px;
-  padding-bottom: 65px;
+  
   display: table-cell;
+  text-align: center;
 }
 
-@media (max-width: 767px) {
-  .card-3 {
-    display: block;
-  }
+.card-3 .card-body .col-sm-6{
+  margin: 0px;
+  position: relative;
+  
+  width: 100%;
+}
+
+.card-3 .card-body .col-sm-6 .col-10 .form-group textarea{
+
+  width: 100%;
+}
+
+.card-3 .card-body 
+
+
+
   .card-3 .card-heading {
     display: block;
     width: 100%;
-    padding-top: 400px;
+    
     background-position: center center;
   }
   .card-3 .card-body {
     display: block;
     width: 100%;
     padding: 37px 30px;
-    padding-bottom: 45px;
+    
   }
+
+
+.card .card-3{
+
+
 }
+
 
  
  .card-heading img{
 
   display: block;
-  padding-top: 160px;
-  padding-left: 35px;
+  padding-top: 50px;
+  margin-left: 300px;
 
-  width: 300px;
+  width: 250px;
   
   
 
@@ -654,7 +690,78 @@ input {
     font-size: 40px;
   }
 
-  .footer{
-  background: #152F4F;
-  color:white;
+  .letrastarjeta h2{
+
+    font-size: 20pt;
+    color: rgb(255,247,0);
+    font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
   }
+
+  .menuarriba a{
+
+    font-size: 15pt;
+    color: rgb(255,247,0);
+    font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
+
+
+
+  }
+
+  .menuarriba a:hover{
+
+    background-color: red;
+  }
+
+
+  .navbar-nav>li>a:hover {
+
+    background-color: red;
+    
+}
+
+
+aside a{
+
+  font-size: 18pt;
+  color: red;
+  font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
+}
+
+h3{
+  font-size: 19pt;
+  color: rgb(5,0,255);
+  font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
+}
+
+.col-sm-12{
+
+  height: 800px;
+}
+
+
+.zoom {
+    transition: transform .2s; 
+}
+ 
+.zoom:hover {
+    transform: scale(1.2); 
+
+}
+
+.card-body .input-group3 .card-3{
+
+
+  width: 700px;
+  background-color: rgb(255,255,255);
+}
+
+
+body{
+
+  color: red;
+}
+
+.alert img{
+
+  width: 40%;
+}

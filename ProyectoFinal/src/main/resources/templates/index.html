@@ -2,131 +2,255 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"
-	href="../static/css/style.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script th:src="@{/javascript/indexJavascript.js}"
-	src="../static/javascript/indexJavascript.js" defer></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"
+  href="../static/css/style.css">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script th:src="@{/javascript/indexJavascript.js}"
+  src="../static/javascript/indexJavascript.js" defer></script>
 
 
 
-<title>A golpe de pedal!</title>
+
+  <title>A golpe de pedal!</title>
 
 
 </head>
 <body>
-	<div id="envoltorio">
-		<header>
-			<img src="/img/banner.gif">
+  <div id="envoltorio">
+    <header>
+      
+      <div class="jumbotron jumbotron-fluid">
+    
+      
+        <img src="/img/banner.gif">
+      
+  
+  </div>
 
-		</header>
-		<div id="contenido">
-			<nav>
-				<ul>
-					<li>Lapierre</li>
-					<br>
-					<li>Kona</li>
-					<br>
-					<li>Specialized</li>
-					<br>
-					<li>Canyon</li>
-					<br>
-					<li>Cube</li>
-					<br>
-					<li>Trek</li>
-					<br>
-					<li>Scott</li>
-					<br>
-					<li>Orbea</li>
-					<br>
-				</ul>
-				<div class="boton">
+    </header>
+
+    <nav>
+      
 
 
-				<button type="button" class="btn btn-block btn-info "><a href="agregarBici.html" th:href="@{/nueva}">AgregarBici</a></button>
-				<button type="button" class="btn btn-block btn-info "><a href="agregarCategoria.html" th:href="@{/nuevaCategoria}">AgregarCategoria</a></button>
+     <div class="container-fluid">
+        <div class="menuarriba">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" th:href="@{/}">A Golpe de Pedal!!</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Agregar <span
+              class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="agregarBici.html" th:href="@{/nueva}">Bicicleta</a></li>
+                <li><a href="agregarCategoria.html" th:href="@{/nuevaCategoria}">Categoria</a></li>
+            
+        </div>
+      </div>
+      </div>
+    </nav>
+    <div id="contenido">
 
 
 
-				</div>
-			</nav>
-		
-			
-<main>
 
-		
-		
-		<div class="container">
-    <div class="row">
 
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-" th:each="bicicleta : ${bicicletas}">
 
-            <div >
-                <svg>
-                    <img
-								th:src="${not (#strings.isEmpty(bicicleta.imagen))} 
-								              ? ${bicicleta.imagen} : 'http://placehold.it/48x48'"
-								class="img-responsive " alt="imagen" />
-                </svg>
-                <div class="card-body">
-                    <p th:text="${bicicleta.marcaModelo}" class="card-text"></p>
-                    <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        </div>
-                        <small class="text-muted"></small>
-                    </div>
+      <aside >
+       
+        
+
+<div class="plantilla container-fluid text-center">
+
+    <div class="col-sm-12">
+      <h3>Categorías</h3>
+      
+      
+        <a id="todas" href="#" th:href="@{/}">Todas</a><br><br>
+        <div class="row"  th:each="categoria : ${categorias}">
+          
+
+            <a href="#" th:href="@{/?(idCategoria=${categoria.id})}" th:text="${categoria.nombre}">categoria </a>
+        
+              
+              <div class="card-body">
+               
+          
+          
+        
+                
+               
+                <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                  <div class="btn-group">
+
+                    <a href="#" th:href="@{/borrarCategoria/{id}(id=${categoria.id})}"><span class="glyphicon glyphicon-trash"></span> Borrar</a><br>
+            <a href="index.html" th:href="@{/editar/categoria/{id}(id=${categoria.id})}"><span class="glyphicon glyphicon-credit-card"></span>Editar</a>
+            <br><br><br><br>
+                    
+                    <br>
+                  </div>
+                  <small class="text-muted"></small>
                 </div>
-            </div>
+              </div>
+          
+          
         </div>
 
-    </div>
-</div>
-		
-		
-		
-		
-		
-						</main>
-				<aside></aside>
-		</div>
-		<footer>
-			<div class="mt-5 pt-5 pb-5 footer">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-5 col-xs-12 about-company">
-      <h2>AGP - A Golpe de Pedal !!</h2>
-      <p class="pr-5 text-white-50">Si eres amante de las dos ruedas... te gustará! </p>
-      <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
-    </div>
-    <div class="col-lg-3 col-xs-12 links">
-      <img src="img/pedaleando2.gif" width="80%">
-    </div>
-    <div class="col-lg-4 col-xs-12 location">
-      <h4 class="mt-lg-0 mt-sm-4">Localización</h4>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.6103230050408!2d-6.007291449508676!3d37.37983720656933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c6a70309ecb%3A0x63939d6566b1b572!2sCalle%20Condes%20de%20Bustillo%2C%2041010%20Sevilla!5e0!3m2!1ses!2ses!4v1621637439761!5m2!1ses!2ses" width="150" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       
-      <p><i class="fa fa-envelope-o mr-3"></i>claseswilly@gmail.com</p>
+
     </div>
   </div>
-  <div class="row mt-5">
-    <div class="col copyright">
-      <p class=""><small class="text-white-50">©2021 1ºDAM ---> Guillermo Ferrari</small></p>
+
+
+
+<div class="container">
+  <br><br><br><br><br><br><br><br><br><br>
+    <div class="row">
+      <br><br><br><br><br><br><br><br><br><br>
+      <div class="col-md-offset-2 col-md-8">
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="alert alert-warning alert-dismissible" role="alert"
+          th:if="${param.error}">
+          
+          <button type="button" class="close" data-dismiss="alert"
+            aria-label="Close">
+
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+
+          <span><img src="/img/prohibido.png"><h1>No puedes borrar una categoría que tenga bicicletas</h1></span>
+
+        </div>
+
+        
+       
+      </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+        
+      
+    </aside>
+    <main>
+
+      
+
+
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-xl-3 col-lg-4 col-md-6 mb-" th:each="bicicleta : ${bicicletas}">
+            
+            <div >
+              <div class="zoom">
+                <img
+                th:src="${not (#strings.isEmpty(bicicleta.imagen))} 
+                ? ${bicicleta.imagen} : 'http://placehold.it/48x48'"
+                class="img-responsive " alt="imagen" />
+                </div>
+              
+              <div class="card-body">
+                <p th:text="${bicicleta.marcaModelo}" class="card-text"></p>
+               <p th:text="${bicicleta.categoria.nombre}" class="card-text"></p>
+    			
+    			
+    		
+                <p th:text="${'Precio: ' + bicicleta.precio}" class="card-text"> </p>
+               
+                <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                  <div class="btn-group">
+
+                    <a href="#" th:href="@{/borrar/{id}(id=${bicicleta.id})}"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
+     				<a href="#" th:href="@{/editarBici/{id}(id=${bicicleta.id})}"><span class="glyphicon glyphicon-credit-card"></span>Editar</a>
+                    <a href="#" th:href="@{/editarBici/{id}(id=${bicicleta.id})}"><span class="glyphicon glyphicon-eye-open"></span>Ver detalles</a>
+                    <br>
+                  </div>
+                  <small class="text-muted"></small>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+    </main>
+    
+  </div>
+  <footer>
+    <div class="mt-5 pt-5 pb-5 footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-xs-12 about-company">
+            <h2>AGP - A Golpe de Pedal !!</h2>
+            <p class="pr-5 text-white-50">Si eres amante de las dos ruedas... te gustará! </p>
+            <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+          </div>
+          <div class="col-lg-2 col-xs-10 links">
+            <img src="img/footerbike.png" width="80%">
+          </div>
+          <div class="col-lg-4 col-xs-12 location">
+            <h4 class="mt-lg-0 mt-sm-4">Localización</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.6103230050408!2d-6.007291449508676!3d37.37983720656933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c6a70309ecb%3A0x63939d6566b1b572!2sCalle%20Condes%20de%20Bustillo%2C%2041010%20Sevilla!5e0!3m2!1ses!2ses!4v1621637439761!5m2!1ses!2ses" width="150" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <p><i class="fa fa-envelope-o mr-3"></i>claseswilly@gmail.com</p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col copyright">
+            <p class=""><small class="text-white-50">©2021 1ºDAM ---> Guillermo Ferrari</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
-</div>
-		</footer>
-	</div>
 </body>
 </html>
